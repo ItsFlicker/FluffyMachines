@@ -16,8 +16,6 @@ import io.ncbpfluffybear.fluffymachines.items.tools.UpgradedExplosiveShovel;
 import io.ncbpfluffybear.fluffymachines.items.tools.UpgradedLumberAxe;
 import io.ncbpfluffybear.fluffymachines.items.tools.WarpPadConfigurator;
 import io.ncbpfluffybear.fluffymachines.items.tools.WateringCan;
-import io.ncbpfluffybear.fluffymachines.machines.AdvancedAutoDisenchanter;
-import io.ncbpfluffybear.fluffymachines.machines.AlternateElevatorPlate;
 import io.ncbpfluffybear.fluffymachines.machines.AutoAncientAltar;
 import io.ncbpfluffybear.fluffymachines.machines.AutoArmorForge;
 import io.ncbpfluffybear.fluffymachines.machines.AutoCraftingTable;
@@ -61,7 +59,7 @@ public final class FluffyItemSetup {
                 new ItemStack(Material.OAK_LOG), new ItemStack(Material.BARREL), new ItemStack(Material.OAK_LOG),
                 new ItemStack(Material.OAK_LOG), new ItemStack(Material.BARREL), new ItemStack(Material.OAK_LOG),
                 new ItemStack(Material.OAK_LOG), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.OAK_LOG)},
-            "&eSmall Fluffy Barrel", Barrel.SMALL_BARREL_SIZE
+            "&e一阶次元箱子", Barrel.SMALL_BARREL_SIZE
         ).register(plugin);
 
         new Barrel(FluffyItems.fluffybarrels, FluffyItems.MEDIUM_FLUFFY_BARREL, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -72,7 +70,7 @@ public final class FluffyItemSetup {
                 new ItemStack(Material.SMOOTH_STONE),
                 new ItemStack(Material.SMOOTH_STONE), SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.SMOOTH_STONE)},
-            "&6Medium Fluffy Barrel", Barrel.MEDIUM_BARREL_SIZE
+            "&6二阶次元箱子", Barrel.MEDIUM_BARREL_SIZE
         ).register(plugin);
 
         new Barrel(FluffyItems.fluffybarrels, FluffyItems.BIG_FLUFFY_BARREL, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -80,7 +78,7 @@ public final class FluffyItemSetup {
                 new ItemStack(Material.BRICKS), FluffyItems.MEDIUM_FLUFFY_BARREL, new ItemStack(Material.BRICKS),
                 new ItemStack(Material.BRICKS), FluffyItems.MEDIUM_FLUFFY_BARREL, new ItemStack(Material.BRICKS),
                 new ItemStack(Material.BRICKS), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.BRICKS)},
-            "&bBig Fluffy Barrel", Barrel.BIG_BARREL_SIZE
+            "&b三阶次元箱子", Barrel.BIG_BARREL_SIZE
         ).register(plugin);
 
         new Barrel(FluffyItems.fluffybarrels, FluffyItems.LARGE_FLUFFY_BARREL, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -88,7 +86,7 @@ public final class FluffyItemSetup {
                 new ItemStack(Material.IRON_BLOCK), FluffyItems.BIG_FLUFFY_BARREL, new ItemStack(Material.IRON_BLOCK),
                 new ItemStack(Material.IRON_BLOCK), FluffyItems.BIG_FLUFFY_BARREL, new ItemStack(Material.IRON_BLOCK),
                 new ItemStack(Material.IRON_BLOCK), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.IRON_BLOCK)},
-            "&aLarge Fluffy Barrel", Barrel.LARGE_BARREL_SIZE
+            "&a四阶次元箱子", Barrel.LARGE_BARREL_SIZE
         ).register(plugin);
 
         new Barrel(FluffyItems.fluffybarrels, FluffyItems.MASSIVE_FLUFFY_BARREL, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -96,7 +94,7 @@ public final class FluffyItemSetup {
                 new ItemStack(Material.OBSIDIAN), FluffyItems.LARGE_FLUFFY_BARREL, new ItemStack(Material.OBSIDIAN),
                 new ItemStack(Material.OBSIDIAN), FluffyItems.LARGE_FLUFFY_BARREL, new ItemStack(Material.OBSIDIAN),
                 new ItemStack(Material.OBSIDIAN), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.OBSIDIAN)},
-            "&5Massive Fluffy Barrel", Barrel.MASSIVE_BARREL_SIZE
+            "&5五阶次元箱子", Barrel.MASSIVE_BARREL_SIZE
         ).register(plugin);
 
         new Barrel(FluffyItems.fluffybarrels, FluffyItems.BOTTOMLESS_FLUFFY_BARREL,
@@ -104,7 +102,7 @@ public final class FluffyItemSetup {
             SlimefunItems.REINFORCED_PLATE, FluffyItems.MASSIVE_FLUFFY_BARREL, SlimefunItems.REINFORCED_PLATE,
             SlimefunItems.REINFORCED_PLATE, FluffyItems.MASSIVE_FLUFFY_BARREL, SlimefunItems.REINFORCED_PLATE,
             SlimefunItems.REINFORCED_PLATE, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.REINFORCED_PLATE},
-            "&cBottomless Fluffy Barrel", Barrel.BOTTOMLESS_BARREL_SIZE
+            "&c六阶次元箱子", Barrel.BOTTOMLESS_BARREL_SIZE
         ).register(plugin);
 
         // Chargers
@@ -247,14 +245,6 @@ public final class FluffyItemSetup {
             new ItemStack(Material.ANVIL), FluffyItems.AUTO_CRAFTING_TABLE, new ItemStack(Material.ANVIL)
         }).register(plugin);
 
-        new AdvancedAutoDisenchanter(FluffyItems.fluffymachines, FluffyItems.ADVANCED_AUTO_DISENCHANTER,
-            RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-            SlimefunItems.REDSTONE_ALLOY, SlimefunItems.AUTO_ANVIL_2, SlimefunItems.REDSTONE_ALLOY,
-            SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.AUTO_DISENCHANTER, SlimefunItems.BLISTERING_INGOT_3,
-            SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN,
-            SlimefunItems.WITHER_PROOF_OBSIDIAN
-        }).register(plugin);
-
         new BackpackLoader(FluffyItems.fluffymachines, FluffyItems.BACKPACK_LOADER,
             RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
             orangeGlass, orangeGlass, orangeGlass,
@@ -299,32 +289,10 @@ public final class FluffyItemSetup {
             SlimefunItems.SYNTHETIC_EMERALD, new ItemStack(Material.OBSIDIAN), SlimefunItems.SYNTHETIC_EMERALD
         }).register(plugin);
 
-        new EnderChestInsertionNode(FluffyItems.fluffymachines, FluffyItems.ENDER_CHEST_INSERTION_NODE,
-            RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-            SlimefunItems.ENDER_LUMP_2, SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ENDER_LUMP_2,
-            new ItemStack(Material.DISPENSER), new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.HOPPER),
-            SlimefunItems.ENDER_LUMP_2, SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ENDER_LUMP_2
-        }).register(plugin);
-
-        new EnderChestExtractionNode(FluffyItems.fluffymachines, FluffyItems.ENDER_CHEST_EXTRACTION_NODE,
-            RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-            SlimefunItems.ENDER_LUMP_2, SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ENDER_LUMP_2,
-            new ItemStack(Material.HOPPER), new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.DISPENSER),
-            SlimefunItems.ENDER_LUMP_2, advancedCircuitBoard, SlimefunItems.ENDER_LUMP_2
-        }).register(plugin);
-
         new Dolly(FluffyItems.fluffymachines, FluffyItems.DOLLY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
             new ItemStack(Material.LEATHER), new ItemStack(Material.LEATHER), new ItemStack(Material.LEATHER),
             new ItemStack(Material.IRON_INGOT), new ItemStack(Material.MINECART), new ItemStack(Material.IRON_INGOT),
             new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT)
-        }).register(plugin);
-
-        new SlimefunItem(FluffyItems.fluffymachines, FluffyItems.ANCIENT_BOOK,
-            RecipeType.ANCIENT_ALTAR, new ItemStack[] {
-            new ItemStack(Material.BOOK), SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, new ItemStack(Material.BOOK),
-            SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, SlimefunItems.ENCHANTMENT_RUNE,
-            SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE,
-            new ItemStack(Material.BOOK), SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, new ItemStack(Material.BOOK)
         }).register(plugin);
 
         new WarpPad(FluffyItems.fluffymachines, FluffyItems.WARP_PAD,
@@ -357,14 +325,6 @@ public final class FluffyItemSetup {
             SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.PISTON), SlimefunItems.ELECTRIC_MOTOR
         }).register(plugin);
 
-        new AlternateElevatorPlate(FluffyItems.fluffymachines, FluffyItems.ALTERNATE_ELEVATOR_PLATE,
-            RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-            new ItemStack(Material.STONE_PRESSURE_PLATE), new ItemStack(Material.STONE_PRESSURE_PLATE), new ItemStack(Material.STONE_PRESSURE_PLATE),
-            new ItemStack(Material.PISTON), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.PISTON),
-            SlimefunItems.ALUMINUM_BRONZE_INGOT, SlimefunItems.ALUMINUM_BRONZE_INGOT,
-            SlimefunItems.ALUMINUM_BRONZE_INGOT},
-            new SlimefunItemStack(FluffyItems.ALTERNATE_ELEVATOR_PLATE, 2)
-        ).register(plugin);
 
         // Items
     }

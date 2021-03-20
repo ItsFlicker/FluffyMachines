@@ -85,16 +85,16 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
                 // Essentially convert to onPlace itemhandler
                 if (BlockStorage.getLocationInfo(b.getLocation(), "stored") == null) {
                     menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
-                        Material.LIME_STAINED_GLASS_PANE, "&6Items Stored: &e0" + " / " + MAX_STORAGE, "&70%"));
+                        Material.LIME_STAINED_GLASS_PANE, "&6已存储物品: &e0" + " / " + MAX_STORAGE, "&70%"));
                     menu.addMenuClickHandler(STATUS_SLOT, ChestMenuUtils.getEmptyClickHandler());
 
-                    menu.replaceExistingItem(DISPLAY_SLOT, new CustomItem(Material.BARRIER, "&cEmpty"));
+                    menu.replaceExistingItem(DISPLAY_SLOT, new CustomItem(Material.BARRIER, "&c空"));
                     menu.addMenuClickHandler(DISPLAY_SLOT, ChestMenuUtils.getEmptyClickHandler());
 
                     BlockStorage.addBlockInfo(b, "stored", "0");
 
                     if (showHologram.getValue()) {
-                        updateHologram(b, "&cEmpty");
+                        updateHologram(b, "&c空");
                     }
 
                     // We still need the click handlers though
@@ -113,7 +113,7 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
 
                 // We need to put this here because this feature was implemented after barrels was introduced to FM
                 BlockStorage.getInventory(b).replaceExistingItem(HOLOGRAM_TOGGLE_SLOT,
-                    new CustomItem(Material.QUARTZ_SLAB, "&3Toggle Hologram"));
+                    new CustomItem(Material.QUARTZ_SLAB, "&3切换全息显示"));
                 BlockStorage.getInventory(b).addMenuClickHandler(HOLOGRAM_TOGGLE_SLOT, (pl, slot, item, action) -> {
                     toggleHolo(b);
                     return false;
@@ -157,7 +157,7 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
                         || sfItem == FluffyItems.UPGRADED_EXPLOSIVE_PICKAXE.getItem()
                         || sfItem == FluffyItems.UPGRADED_EXPLOSIVE_SHOVEL.getItem()
                 )) {
-                    Utils.send(p, "&cYou can not break barrels using explosive tools!");
+                    Utils.send(p, "&c你不能使用爆炸工具来破坏桶!");
                     removeHologram(b);
                     return true;
                 }
@@ -169,7 +169,7 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
                 }
 
                 if (itemCount > 5) {
-                    Utils.send(p, "&cPlease remove nearby items before breaking this barrel!");
+                    Utils.send(p, "&c请在破坏这个桶之前移除周围的掉落物!");
                     return false;
                 }
 
@@ -182,8 +182,8 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
 
                     if (stored > OVERFLOW_AMOUNT) {
 
-                        Utils.send(p, "&eThere are more than " + OVERFLOW_AMOUNT + " items in this barrel! " +
-                            "Dropping " + OVERFLOW_AMOUNT + " items instead!");
+                        Utils.send(p, "&e有超过 " + OVERFLOW_AMOUNT + " 个物品在桶里! " +
+                            "掉落了 " + OVERFLOW_AMOUNT + " 个物品!");
                         int toRemove = OVERFLOW_AMOUNT;
                         while (toRemove >= stackSize) {
 
@@ -475,16 +475,16 @@ public class Barrel extends NonHopperableBlock implements HologramOwner {
             doubleRoundAndFade((double) stored / (double) inv.getItemInSlot(DISPLAY_SLOT).getMaxStackSize());
 
         inv.replaceExistingItem(STATUS_SLOT, new CustomItem(
-            Material.LIME_STAINED_GLASS_PANE, "&6Items Stored: &e" + stored + " / " + MAX_STORAGE,
-            "&b" + storedStacks + " Stacks &8| &7" + storedPercent + "&7%"));
+            Material.LIME_STAINED_GLASS_PANE, "&6已存储物品: &e" + stored + " / " + MAX_STORAGE,
+            "&b" + storedStacks + " 组 &8| &7" + storedPercent + "&7%"));
         if (showHologram.getValue() && (hasHolo == null || hasHolo.equals("true"))) {
             updateHologram(b, itemName + " &9x" + stored + " &7(" + storedPercent + "&7%)");
         }
 
         if (stored == 0) {
-            inv.replaceExistingItem(DISPLAY_SLOT, new CustomItem(Material.BARRIER, "&cEmpty"));
+            inv.replaceExistingItem(DISPLAY_SLOT, new CustomItem(Material.BARRIER, "&c空"));
             if (showHologram.getValue() && (hasHolo == null || hasHolo.equals("true"))) {
-                updateHologram(b, "&cEmpty");
+                updateHologram(b, "&c空");
             }
         }
     }

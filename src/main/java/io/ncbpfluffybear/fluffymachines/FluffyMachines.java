@@ -53,10 +53,6 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
         // Read something from your config.yml
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "NCBPFluffyBear/FluffyMachines/master/").start();
-        }
-
         // Register Glow
 
         try {
@@ -66,7 +62,7 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
                 accepting.set(null, true);
             }
         } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("Failed to register enchantment.");
+            getLogger().warning("注册附魔失败.");
         }
 
         registerGlow();
@@ -109,7 +105,7 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
         }
 
         if (getServer().getPluginManager().isPluginEnabled("McMMO")) {
-            Bukkit.getLogger().log(Level.INFO, "McMMO found!");
+            Bukkit.getLogger().log(Level.INFO, "找到McMMO!");
             getServer().getPluginManager().registerEvents(new McMMOEvents(), this);
         }
 
@@ -121,10 +117,6 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
 
         final Metrics metrics = new Metrics(this, 8927);
 
-        getLogger().log(Level.INFO, ChatColor.GREEN + "Hi there! Want to share your server with the " +
-            "Slimefun community?");
-        getLogger().log(Level.INFO, ChatColor.GREEN + "Join the official Slimefun Discord server at " +
-            "https://discord.gg/slimefun");
     }
 
     @Override
